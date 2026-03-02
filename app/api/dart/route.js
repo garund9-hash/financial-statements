@@ -41,7 +41,7 @@ export async function GET(request) {
   try {
     const response = await fetch(url.toString(), {
       headers: { 'User-Agent': 'FinancialDashboard/1.0' },
-      next: { revalidate: 3600 },
+      cache: 'no-store',
     });
 
     if (!response.ok) {
